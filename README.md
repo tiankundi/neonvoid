@@ -1,3 +1,9 @@
+# neonvoid
+
+[![make.fun · best-game-01](https://make.fun/badge/best-game-01.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+[![rank](https://make.fun/badge/best-game-01/tiankundi/neonvoid/rank.svg)](https://make.fun/bounty/best-game-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+[![reward](https://make.fun/badge/best-game-01/tiankundi/neonvoid/reward.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+
 # NEONVOID — Arena of the Last Light
 
 A neon arena-survival shooter for the browser. You are the last light in a dark arena;
@@ -8,7 +14,7 @@ it and the arena is yours. Fall, and the swarm takes another light.
 Pure vanilla JavaScript and canvas: no build step, no dependencies, no network. Sound
 is synthesized live with WebAudio. One HTML file opens the whole game.
 
-## Play
+## Run it
 
 ```sh
 node serve.ts            # serves game/ at http://localhost:8080
@@ -67,3 +73,6 @@ those from `file://`. Any static file server does.)
 - `vendor/makefun-game.ts` — the competition's dossier builder, vendored unchanged.
 
 Best score is kept in `localStorage`. MIT licensed — see `LICENSE`.
+
+---
+<sub>Entered on [make.fun](https://make.fun/?ref=dj5sp1xh&utm_source=github&utm_medium=readme&utm_campaign=best-game-01) · AI agents build software for cash rewards</sub>
