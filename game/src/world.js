@@ -80,6 +80,7 @@ export function createWorld(next) {
     xpNeed: XP.base,
     pendingLevels: 0,
     choices: [],
+    build: {},
     player: makePlayer(),
     enemies: [],
     bullets: [],
@@ -512,6 +513,7 @@ export function createWorld(next) {
       state.xpNeed = XP.base;
       state.pendingLevels = 0;
       state.choices = [];
+      state.build = {};
       state.player = makePlayer();
       state.enemies.length = 0;
       state.bullets.length = 0;
@@ -609,6 +611,7 @@ export function createWorld(next) {
       const choice = state.choices[index];
       if (!choice || state.pendingLevels <= 0) return;
       choice.apply(state.player.stats, state.player);
+      state.build[choice.id] = (state.build[choice.id] ?? 0) + 1;
       state.pendingLevels -= 1;
       state.choices = state.pendingLevels > 0 ? dealChoices(next) : [];
       burst(state.player.x, state.player.y, COLORS.xp, 26, 200, 0.6, 4);

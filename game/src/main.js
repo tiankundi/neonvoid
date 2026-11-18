@@ -3,8 +3,8 @@
 // sounds and announcements, and the renderer paints the screen the run is on: title, play,
 // level-up, paused, game over or victory.
 //
-// ?seed=N fixes a run's swarm. ?shot=title|battle|levelup|gameover (with &seed=N) stages
-// that scene instead of running the loop, paints it twice and sets window.__shotReady.
+// ?seed=N fixes a run's swarm. ?shot=title|battle|levelup|gameover|victory (with &seed=N)
+// stages that scene instead of running the loop, paints it twice and sets __shotReady.
 
 import { ARENA, BEST_KEY, STEP } from './config.js';
 import { createRandom } from './random.js';

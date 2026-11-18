@@ -5,6 +5,7 @@
 
 import { ARENA, COLORS } from './config.js';
 import { actorSprite, glowSprite } from './sprites.js';
+import { UPGRADES } from './upgrades.js';
 
 export const SCREEN_TITLE = 'title';
 export const SCREEN_PLAY = 'play';
@@ -303,6 +304,25 @@ export function createRenderer(canvas) {
       text(ctx, choice.text, r.x + r.w / 2, r.y + 88, { size: 13.5, align: 'center', color: COLORS.xp });
       text(ctx, `press ${i + 1} or click`, r.x + r.w / 2, r.y + r.h - 18, { size: 11, align: 'center', color: COLORS.dim });
     });
+
+    // The build so far, under the cards: every stack the run already owns, counts and all,
+    // so the choice reads as growing something, not starting from nothing.
+    const owned = UPGRADES.filter((u) => (state.build?.[u.id] ?? 0) > 0);
+    if (owned.length > 0) {
+      const bottom = rects[0].y + rects[0].h;
+      text(ctx, 'YOUR BUILD', view.width / 2, bottom + 32, { size: 11, align: 'center', bold: true, color: COLORS.dim });
+      ctx.font = `12.5px ${FONT}`;
+      const lines = [''];
+      for (const u of owned) {
+        const item = `${u.name} ×${state.build[u.id]}`;
+        const candidate = lines[lines.length - 1] ? `${lines[lines.length - 1]}  ·  ${item}` : item;
+        if (lines[lines.length - 1] && ctx.measureText(candidate).width > view.width - 180) lines.push(item);
+        else lines[lines.length - 1] = candidate;
+      }
+      lines.forEach((line, i) => {
+        text(ctx, line, view.width / 2, bottom + 54 + i * 20, { size: 12.5, align: 'center', color: COLORS.text });
+      });
+    }
   }
 
   function drawResults(state, best, ui, victory) {

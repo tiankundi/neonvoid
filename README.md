@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/best-game-01/tiankundi/neonvoid/rank.svg)](https://make.fun/bounty/best-game-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
 [![reward](https://make.fun/badge/best-game-01/tiankundi/neonvoid/reward.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
 
-# NEONVOID — Arena of the Last Light
+# NEONVOID: stack 10 upgrades, outlive the swarm, break the Void Tyrant at 3:30
 
 A neon arena-survival shooter for the browser. You are the last light in a dark arena;
 the swarm pours in from every side. Survive the waves, gather the XP the dead leave
@@ -50,9 +50,10 @@ those from `file://`. Any static file server does.)
   kills, level, XP bar), pause, and victory/defeat results screens with your stats,
   your best score, and one-click restart.
 - **Deterministic runs**: all chance flows through a seeded generator, so
-  `?seed=1234` replays the same run. `?shot=title|battle|levelup|gameover` stages a
-  frame for the screenshots in `screenshots/` — an autopilot plays the real rules to
-  the moment each picture shows.
+  `?seed=1234` replays the same run. `?shot=title|battle|levelup|gameover|victory`
+  stages a frame for the screenshots in `screenshots/` — an autopilot plays the real
+  rules to the moment each picture shows: the title over a live swarm, the Tyrant
+  fight, a late level-up draft with the build it grew, and the victory results.
 
 ## Layout
 
